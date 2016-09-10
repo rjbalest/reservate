@@ -17,8 +17,8 @@
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.user_id %></td>
-        <td><%= reservation.asset_id %></td>
+        <td><%= reservation.user.email %></td>
+        <td><%= reservation.asset.ip_address %></td>
         <td><%= reservation.start_time %></td>
         <td><%= reservation.end_time %></td>
         <td><%= reservation.notes %></td>

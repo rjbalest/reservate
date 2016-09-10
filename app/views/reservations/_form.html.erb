@@ -12,13 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
-  </div>
-
-  <div class="field">
     <%= f.label :asset_id %>
-    <%= f.number_field :asset_id %>
+    <%= f.collection_select :asset_id, Asset.order(:id),:id,:ip_address, include_blank: true %>
   </div>
 
   <div class="field">

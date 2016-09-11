@@ -2,7 +2,7 @@
 
 <h1>Reservations</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>User</th>
@@ -23,8 +23,12 @@
         <td><%= reservation.end_time %></td>
         <td><%= reservation.notes %></td>
         <td><%= link_to 'Show', reservation %></td>
-        <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Modify', edit_reservation_path(reservation) %></td>
+	<% if reservation.user == current_user %>
+        <td><%= link_to 'Release', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% else %>
+	<td></td>
+	<% end %>
       </tr>
     <% end %>
   </tbody>

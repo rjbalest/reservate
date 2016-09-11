@@ -2,7 +2,7 @@
 
 <h1>Assets</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Ip address</th>
@@ -20,7 +20,11 @@
         <td><%= asset.description %></td>
         <td><%= link_to 'Show', asset %></td>
         <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
-        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% if current_user.admin? %>
+        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% else %>
+
+	<% end %>
       </tr>
     <% end %>
   </tbody>

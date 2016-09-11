@@ -9,10 +9,22 @@
   </head>
 
   <body>
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/login_items' %>
-    </ul>
+    <div class="container">
+      <div class="masthead">
+
+	<ul class="nav nav-pills pull-right">
+	  <%= render 'devise/menu/registration_items' %>
+	  <%= render 'devise/menu/login_items' %>
+	</ul>
+	
+	<h3 class="muted"><%= link_to "Reservate", root_path %></h3>
+	<h5 class="muted"> asset reservation service</h5>
+      </div>
+      <hr />
+
+    
+    
     <%= yield %>
+    </div>
   </body>
 </html>

@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :reservations, dependent: :destroy
+
+  def admin?
+    id == 1
+  end
+
 end

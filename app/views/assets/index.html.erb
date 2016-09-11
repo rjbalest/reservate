@@ -21,7 +21,7 @@
         <td><%= link_to 'Show', asset %></td>
         <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
 	<% if current_user.admin? %>
-        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	<% else %>
 
 	<% end %>

@@ -13,24 +13,24 @@
 
   <div class="field">
     <%= f.label :asset_id %>
-    <%= f.collection_select :asset_id, Asset.order(:id),:id,:ip_address, include_blank: true %>
+    <%= f.collection_select :asset_id, Asset.order(:id),:id,:name, include_blank: true %>
   </div>
-
+  <br/>
   <div class="field">
     <%= f.label :start_time %>
     <%= f.datetime_select :start_time %>
   </div>
-
+    <br/>
   <div class="field">
     <%= f.label :end_time %>
     <%= f.datetime_select :end_time %>
   </div>
-
+    <br/>
   <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
+    <%= f.label :name %>
+    <%= f.text_field :notes %>
   </div>
-
+    <br/>
   <div class="actions">
     <%= f.submit %>
   </div>

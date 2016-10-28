@@ -18,15 +18,16 @@
     <% @reservations.each do |reservation| %>
       <tr>
         <td><%= reservation.user.email %></td>
-        <td><%= reservation.asset.ip_address %></td>
+        <td><%= reservation.asset.name %></td>
         <td><%= reservation.start_time %></td>
         <td><%= reservation.end_time %></td>
         <td><%= reservation.notes %></td>
         <td><%= link_to 'Show', reservation %></td>
         <td><%= link_to 'Modify', edit_reservation_path(reservation) %></td>
-	<% if reservation.user == current_user %>
+	<!-- % if reservation.user == current_user % -->
+        <% if true %>
         <td><%= link_to 'Release', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	<% else %>
+	  <% else %>
 	<td></td>
 	<% end %>
       </tr>

@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.order(:asset_id).order(:end_time)
+    @reservations = Reservation.order(:asset_id)
   end
 
   # GET /reservations/1
@@ -25,7 +25,10 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
+
+    params = Reservation.map_params(reservation_params)
+    @reservation = Reservation.new(params)
+
     @reservation.user = current_user
       
     respond_to do |format|

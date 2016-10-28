@@ -50,5 +50,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # User auth with devise
 gem 'devise'
 
+# REST calls
+gem 'rest-client'
+
 #
 gem 'bootstrap-sass', '~> 3.3.6'
